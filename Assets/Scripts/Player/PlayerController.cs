@@ -4,6 +4,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
+    public float jumpForce = 5f;
     public Rigidbody2D rb;
 
 
@@ -17,6 +18,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float moveX = Input.GetAxisRaw("Horizontal");
+        bool jumpPressed = Input.GetButtonDown("Jump");
+
+        rb.linearVelocityX = moveX * moveSpeed;
+
+        if (jumpPressed)
+
+            rb.AddForce(Vector2.up *jumpForce, ForceMode2D.Impulse);
+
+
     }
 }
