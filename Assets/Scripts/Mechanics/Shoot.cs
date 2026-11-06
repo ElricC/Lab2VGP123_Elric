@@ -46,6 +46,6 @@ public class Shoot : MonoBehaviour
         {
             curProjectile = Instantiate(projectilePrefab, spawnPointLeft.position, Quaternion.identity);
             curProjectile.SetVelocity(initShotVelocity);
-        }
+        }    
     }
 }
